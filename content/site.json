@@ -1,0 +1,13 @@
+{
+  "title": "김선열 Kim Sunyoul",
+  "nameKo": "김선열",
+  "nameEn": "Kim Sunyoul",
+  "description": "김선열은 입체 기반의 설치 작업을 통해 기술 발전과 자본 시스템이 만든 규범 속에서 주변화되는 현상을 탐구한다.",
+  "nav": [
+    { "label": "Work", "href": "/", "match": ["/", "/work/", "/all-quiet-on-the-western-front/", "/spot-the-difference/", "/how-to-win-atsunami/", "/trouble-in-paradise/", "/studies-experiments/"] },
+    { "label": "Text", "href": "/text/", "match": ["/text/"] },
+    { "label": "Info", "href": "/cv/", "match": ["/cv/"] },
+    { "label": "Contact", "href": "/contact/", "match": ["/contact/"] }
+  ],
+  "instagram": { "label": "@kimsunyoul", "href": "https://www.instagram.com/kimsunyoul/" }
+}

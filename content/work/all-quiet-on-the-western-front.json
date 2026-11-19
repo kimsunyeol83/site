@@ -1,0 +1,196 @@
+{
+  "modules": [
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/U88hyNPSPJH/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 56.25,
+      "maxWidth": 1920,
+      "caption": "홍티아트센터 전시 영상"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "9226f6ea",
+          "caption": "전시전경 (installation view)"
+        },
+        {
+          "type": "image",
+          "img": "d80a1b70"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "621fe386"
+        },
+        {
+          "type": "image",
+          "img": "8e84102c"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/Cc-TrPPy9yo/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 56.25,
+      "maxWidth": 1920,
+      "caption": "CTS홍보영상 (Promotional Video)"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "ca2e5180",
+          "caption": "Emotion Sentinel Drone (감정 감시 드론) _ 2채널 디스플레이, 플라스틱, 합판, 알루미늄 프로파일, 복층형 렉산 _ 가변설치 _ 2025"
+        },
+        {
+          "type": "image",
+          "img": "7e1404b2",
+          "caption": "Emotion Sentinel Drone (감정 감시 드론) - 디테일 이미지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "img": "37a8390d",
+      "caption": "Emotion Sentinel Drone (감정 감시 드론) - 감정인식 실시간 데이터 시각화"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "336bfa1d",
+          "caption": "Smile Manufacturing Frame (미소 교정 프레임) _ 단채널 비디오, 플라스틱, 알루미늄 프레임, 합판, 복층형 렉산 _ 가변설치_ 2025"
+        },
+        {
+          "type": "image",
+          "img": "6d302a73",
+          "caption": "Smile Manufacturing Frame (미소 교정 프레임) - 디테일 이미지"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "60f01c00"
+        },
+        {
+          "type": "image",
+          "img": "10b62af7"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/NRci4E_eiRK/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 56.66,
+      "maxWidth": 1906,
+      "caption": "Smile Manufacturing Frame (미소 교정 프레임) _ Video"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "152341d1",
+          "caption": "Visual Shock Integration (시각 충격 융합) _ 단채널 비디오, 디스플레이장치, 플라스틱, 알루미늄프로파일, 합판, 복층형 렉산 _ 가변설치 _ 2025 "
+        },
+        {
+          "type": "image",
+          "img": "25501a7a",
+          "caption": "Visual Shock Integration (시각 충격 융합) _ VR머신 디테일 이미지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "img": "94181ba8"
+    },
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/4KB3UuguCXP/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 56.66,
+      "maxWidth": 1906,
+      "caption": "Visual Shock Integration (시각 충격 융합) _ Video"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "1730e2fe",
+          "caption": "Safe Coin Conversion (세이프 코인 전환) _ QR코드, 석고, 알루미늄프로파일, 합판, 복층형 렉산 _ 가변설치 _ 2025"
+        },
+        {
+          "type": "image",
+          "img": "655f21d0",
+          "caption": "Safe Coin Conversion (세이프 코인 전환) _ 디테일 이미지"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "4ef92aa6"
+        },
+        {
+          "type": "image",
+          "img": "c53ebd6a"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "img": "8ad279a7",
+      "caption": "Safe Coin Conversion (세이프 코인 전환) _ 코인 시세 사이트 (이미지 클릭)",
+      "link": "https://cts-site.vercel.app/scc"
+    },
+    {
+      "type": "image",
+      "img": "b34a0697",
+      "caption": "Safe Zone Shelter (세이프 존 셸터) _ 은박 담요, 파이프, 파이프 조인트, 선풍기 _ 가변설치 _ 2025"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "99702b67"
+        },
+        {
+          "type": "image",
+          "img": "50f18096"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "html": "<p class=\"c\"><strong>작가노트</strong></p>\n<p class=\"c\">All Quiet on the Western Front (2025)</p>\n<p>나는 기술이 약속하는 진보의 서사와 그 이면의 아이러니를 지속적으로 탐구해왔다. 기술은 위기를 극복하는 해결책처럼 제시되지만, 실제로는 소비와 규율의 체계 속에서 재난마저 차별화된 상품으로 변모시킨다. 이번 전시 All Quiet on the Western Front는 이러한 지점에 주목한다. 전시는 재난 이후의 복원을 전면에 내세우는 가상의 군수기업 CTS(CatastroTech Solutions)를 설정하고, 감정 수집을 통해 평안을 약속하는 척 하지만 감시와 통제로 귀결되는 감정감시드론 (Emotion Sentinel Drone), '안전'의 심리를 활용해 불안을 소비재로 전환하는 안전지대셸터(Safe Zone Shelter), 기부를 감정적 안위의 거래로 만드는 Safe Coin 등 일련의 가상 기술을 팝업스토어 형식으로 제시한다. 관객은 이 기술들을 체험하는 과정에서 자연스럽게 소비자, 후원자 그리고 데이터 제공자로 편입되며, 자신이 기술-자본-재난 체계 안에 편입되어 있음을 몸으로 경험하게 된다. 이 전시는 오늘날 기술 발전이 정동마저 상품화하는 구조를 드러내며, 그 속에서 우리는 어떤 위치에 서 있는지를 함께 질문한다.</p>"
+    },
+    {
+      "type": "grid",
+      "imgs": [
+        "b1ea4fd5",
+        "7b521eba",
+        "14fcb0f7",
+        "fbabdcb6",
+        "89ac6782",
+        "78edc00a",
+        "81b1e566",
+        "542f4950",
+        "2a20354d"
+      ]
+    }
+  ]
+}

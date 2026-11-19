@@ -1,0 +1,7 @@
+# 사이트에 내보내지 않는 것들 (작업용 파일)
+_원본
+content
+tools
+build.mjs
+CLAUDE.md
+.claude

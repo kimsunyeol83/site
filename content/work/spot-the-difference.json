@@ -1,0 +1,130 @@
+{
+  "modules": [
+    {
+      "type": "image",
+      "img": "76b8994c",
+      "caption": "Big picture _ 나무 합판, 파이프, 파이프 조인트 _ 가변설치 _ 2024"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "5f59d669"
+        },
+        {
+          "type": "image",
+          "img": "a0bf9417"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/EEqfICHgk45/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 75,
+      "maxWidth": 1440
+    },
+    {
+      "type": "image",
+      "img": "0086cd76",
+      "caption": "What is the difference _ 식물화분, 모니터, 3D프린터, 알루미늄 프로파일, 플라스틱 _ 가변설치 _ 2024"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "c4e82cac"
+        },
+        {
+          "type": "image",
+          "img": "b51acefb"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "2c7149fa"
+        },
+        {
+          "type": "image",
+          "img": "695fc648"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "https://www-ccv.adobe.io/v1/player/ccv/Rod86tQD2cn/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "ratio": 56.25,
+      "maxWidth": 1920
+    },
+    {
+      "type": "text",
+      "html": "<p class=\"c\"><strong>작가노트</strong></p>\n<p class=\"c\"><strong>Spot the difference (2024)</strong></p>\n<p>잊을 만하면 새로운 생성형 AI에 대한 이야기가 들린다. 예술 작품을 만들기 위해 핀터레스트에서 여러 시각적 이미지를 찾던 내가 이제는 AI를 이용해 이미지를 찾고 있는 모습을 보면서, 문득 예술의 원본성에 대해 고민하게 된다. 예술에서 원본성은 왜 중요한가? 작품의 희소성 때문일까? 작가의 손길과 노력 때문일까? 아니면 작가의 의도와 그로 인해 발생하는 가치 때문일까? 결국 돈 때문일까? 수많은 생각을 해보지만, 이미 100여 년 전부터 논의되어온 예술작품에서의 원본성 문제에 대한 정답을 찾기란 쉽지 않다.</p>\n<p>우리는 여러 이미지들이 모방되고 혼합되며 소비되는 시대에 살아가고 있다. 재현, 차용, 오마주, 패러디, 혼성모방 등 듣기 좋은 단어를 사용하며 나름 합리화하지만, 냉정하게 말하면 따라 하거나 이것저것 섞어서 새롭다고 여기는 것을 만들어내는 것이다. 몇 년 전 등장한 블록체인 기술로 여러 짜깁기한 디지털 이미지들이 원본성을 부여받고 고액의 가치를 인정받은 사례는 깊은 인상을 준다. 하지만 우리는 어느덧 AI라는 새로운 기술과 마주하게 되었다. 그러나 아이러니하게도 AI가 만들어내는 이미지들에 대해서는 앞서 말한 합리화를 거부한다. 인간미가 없어서 그런 것일까? 아니면 창작자의 생계를 위협해서일까? 예술과 기술의 경계에서 예술의 본질에 대한 고민일까?</p>\n<p>포스트 디지털 시대에 살고 있는 우리는 삶 자체가 기술과 깊은 관계를 형성하며 살아가고 있다. 그러나 인간의 영역이라고만 생각했던 분야에 인공지능 기술이 도입되는 순간 거부감이 생긴 듯하다. 하지만 AI를 도구로 이용하고 있는 수많은 사례가 존재하며, 그중 저작권까지 인정받은 경우도 있다.</p>\n<p>사진, 인터넷, 스마트폰 등 새로운 기술이 등장했을 때 누군가는 열광했고, 누군가는 우려했다. 그러나 어느 순간 이러한 기술들은 디지털 시대라는 새로운 시대로 우리를 안내했다. 또 다시 AI라는 새로운 변화가 나타난 지금, 인간으로서, 예술가로서 예술의 가치와 의미를 다시금 고민해야 할 시점이다.</p>"
+    },
+    {
+      "type": "image",
+      "img": "ade5840e",
+      "caption": "The originals _ 혼합매체 _ 가변설치 _ 2024"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "9f4b2392",
+          "caption": "The originals(Prompt) _ 대화형 AI가 생성한 이미지 프롬프트를 손도장을 통해 판화지에 전사"
+        },
+        {
+          "type": "image",
+          "img": "9117a562",
+          "caption": "The originals(Prompt) _ prompt 디테일 이미지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "img": "50c98085",
+      "caption": "The originals(Image) _ 생성형 AI 미드저니에 Prompt를 입력해 얻은 이미지들"
+    },
+    {
+      "type": "image",
+      "img": "7325e54c",
+      "caption": "The originals(Reproduction) _ 생성형 AI 미드저니에 Prompt를 입력해 얻은 이미지들을 3D프린팅과 작가의 손을 통해 재현"
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "c6e68d67"
+        },
+        {
+          "type": "image",
+          "img": "04c8a22b"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "items": [
+        {
+          "type": "image",
+          "img": "a0b5f735"
+        },
+        {
+          "type": "image",
+          "img": "eb629a65"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "img": "e34d29be",
+      "caption": "Spot the difference _ 전시전경"
+    }
+  ]
+}
