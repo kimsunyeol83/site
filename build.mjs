@@ -3,9 +3,15 @@
 // 만들어지는 HTML(index.html, 각 폴더의 index.html)은 직접 고치지 않는다. content/ 를 고치고 다시 실행한다.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
+// css·js 주소 뒤에 내용에 따라 바뀌는 꼬리표(?v=...)를 붙인다.
+// 파일을 고치면 주소가 달라져서, 방문자의 브라우저가 예전 css·js 를 계속 쓰는 일을 막는다.
+const ver = (p) => crypto.createHash('sha1').update(fs.readFileSync(path.join(root, p))).digest('hex').slice(0, 8);
+const cssVer = ver('css/style.css');
+const jsVer = ver('js/site.js');
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, 'content', p), 'utf8'));
 const site = read('site.json');
 const works = read('works.json');
@@ -56,7 +62,7 @@ function page({ title, description, pathName, body, bodyClass = '' }) {
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=${cssVer}">
 </head>
 <body${bodyClass ? ` class="${bodyClass}"` : ''}>
   <header class="site-header">
@@ -71,7 +77,7 @@ ${body}
   <footer class="site-footer">
     <a href="${esc(site.instagram.href)}" target="_blank" rel="noopener">${esc(site.instagram.label)}</a>
   </footer>
-  <script src="/js/site.js" defer></script>
+  <script src="/js/site.js?v=${jsVer}" defer></script>
 </body>
 </html>
 `;
