@@ -3,7 +3,11 @@
     {
       "type": "image",
       "img": "dfb9c517",
-      "caption": "나는 아니어야 한다 _ 아이소 핑크, 발포 우레탄 _ 가변설치 _ 2022"
+      "caption": {
+        "title": "나는 아니어야 한다",
+        "ko": "아이소 핑크, 발포 우레탄 _ 가변설치 _ 2022",
+        "en": "XPS foam board (Isopink), polyurethane foam _ dimensions variable _ 2022"
+      }
     },
     {
       "type": "row",
@@ -11,7 +15,12 @@
         {
           "type": "image",
           "img": "a1d60b6b",
-          "caption": "나는 아니어야 한다 _ 디테일 이미지"
+          "caption": {
+            "title": "나는 아니어야 한다",
+            "ko": "디테일 이미지",
+            "en": "detail",
+            "inline": true
+          }
         },
         {
           "type": "image",
@@ -39,17 +48,31 @@
     {
       "type": "image",
       "img": "8d244945",
-      "caption": "나는 아니어야 한다 _ 3D 모델링"
+      "caption": {
+        "title": "나는 아니어야 한다",
+        "ko": "3D 모델링",
+        "en": "3D modeling",
+        "inline": true
+      }
     },
     {
       "type": "image",
       "img": "567852bc",
-      "caption": "발포우레탄, 아크릴, 단채널비디오 _ 가변설치 _ 2022"
+      "caption": {
+        "title": "너와 나의 사이",
+        "ko": "발포우레탄, 아크릴, 단채널비디오 _ 가변설치 _ 2022",
+        "en": "polyurethane foam, acrylic, single-channel video _ dimensions variable _ 2022"
+      }
     },
     {
       "type": "image",
       "img": "1656b91e",
-      "caption": "너와 나의 사이 _ 디테일 이미지"
+      "caption": {
+        "title": "너와 나의 사이",
+        "ko": "디테일 이미지",
+        "en": "detail",
+        "inline": true
+      }
     },
     {
       "type": "row",
@@ -67,7 +90,12 @@
     {
       "type": "image",
       "img": "7dfe5fd3",
-      "caption": "너와 나의 사이 _ 3D 모델링"
+      "caption": {
+        "title": "너와 나의 사이",
+        "ko": "3D 모델링",
+        "en": "3D modeling",
+        "inline": true
+      }
     },
     {
       "type": "text",
@@ -76,7 +104,11 @@
     {
       "type": "image",
       "img": "6459301e",
-      "caption": "위하다레진,아크릴판,인조잔디,모터장치 _ 가변설치 _ 2022"
+      "caption": {
+        "title": "위하다",
+        "ko": "레진,아크릴판,인조잔디,모터장치 _ 가변설치 _ 2022",
+        "en": "resin, acrylic sheet, artificial turf, motor device _ dimensions variable _ 2022"
+      }
     },
     {
       "type": "row",
@@ -84,7 +116,12 @@
         {
           "type": "image",
           "img": "6d6da111",
-          "caption": "위하다 _ 디테일 이미지"
+          "caption": {
+            "title": "위하다",
+            "ko": "디테일 이미지",
+            "en": "detail",
+            "inline": true
+          }
         },
         {
           "type": "image",
@@ -108,7 +145,12 @@
     {
       "type": "image",
       "img": "1e413d70",
-      "caption": "위하다 _ 3D 모델링"
+      "caption": {
+        "title": "위하다",
+        "ko": "3D 모델링",
+        "en": "3D modeling",
+        "inline": true
+      }
     }
   ]
 }

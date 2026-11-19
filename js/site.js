@@ -35,3 +35,17 @@
     if (e.key === 'Escape') close();
   });
 })();
+
+// Text: 지금 열려 있는 글의 목록 항목을 표시한다. 글을 여닫는 것은 CSS(.essay:target)가 한다.
+(function () {
+  var links = document.querySelectorAll('.texts__index a[href^="#"]');
+  if (!links.length) return;
+  function sync() {
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('href') === location.hash) links[i].setAttribute('aria-current', 'true');
+      else links[i].removeAttribute('aria-current');
+    }
+  }
+  window.addEventListener('hashchange', sync);
+  sync();
+})();

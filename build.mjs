@@ -14,6 +14,28 @@ const dims = read('images.json');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const strip = (h) => h.replace(/<[^>]+>/g, '').trim();
 
+// ---------- 캡션 ----------
+// 캡션은 { title, sep, ko, en, inline } 로 적는다. 모두 생략할 수 있다.
+//   title  작품 제목. 굵게 나온다. 작가가 쓴 표기 그대로 둔다.
+//   sep    제목과 설명 사이 구분. 생략하면 " _ ".
+//   ko     한글 설명(재료, 설치 방식, 연도 등).
+//   en     영어 설명. inline 이 true 면 같은 줄 괄호 안에, 아니면 다음 줄에 나온다.
+// 예전 형식인 문자열도 받는다. 문자열은 HTML 그대로 내보낸다.
+function captionHtml(c) {
+  if (!c) return '';
+  if (typeof c === 'string') return c;
+  let h = c.title ? `<strong>${esc(c.title)}</strong>` : '';
+  if (c.ko) h += (c.title ? esc(c.sep || ' _ ') : '') + esc(c.ko);
+  if (c.en) h += c.inline ? ` <span lang="en">(${esc(c.en)})</span>` : `<span class="cap-en" lang="en">${esc(c.en)}</span>`;
+  return h;
+}
+// 사진의 대체 글과 영상 틀의 이름에 쓰는, 태그 없는 캡션.
+function captionText(c) {
+  if (!c) return '';
+  if (typeof c === 'string') return strip(c.replace(/<br>/g, ' '));
+  return [c.title, c.ko].filter(Boolean).join(c.sep || ' _ ') + (c.en ? ` (${c.en})` : '');
+}
+
 function page({ title, description, pathName, body, bodyClass = '' }) {
   const full = title ? `${title} — ${site.title}` : site.title;
   const nav = site.nav
@@ -90,11 +112,11 @@ function img(id, { sizes, alt = '', eager = false }) {
 }
 const figure = (m, sizes, extra = '') => {
   const d = dims[m.img];
-  const alt = m.caption ? strip(m.caption.replace(/<br>/g, ' ')) : '';
+  const alt = captionText(m.caption);
   let inner = img(m.img, { sizes, alt });
   if (m.link) inner = `<a href="${esc(m.link)}" target="_blank" rel="noopener">${inner}</a>`;
   const style = extra === 'row' && d ? ` style="flex:${(d.w / d.h).toFixed(4)}"` : '';
-  return `<figure class="fig${m.link ? ' fig--link' : ''}"${style}>${inner}${m.caption ? `<figcaption>${m.caption}</figcaption>` : ''}</figure>`;
+  return `<figure class="fig${m.link ? ' fig--link' : ''}"${style}>${inner}${m.caption ? `<figcaption>${captionHtml(m.caption)}</figcaption>` : ''}</figure>`;
 };
 
 function modules(mods) {
@@ -107,12 +129,12 @@ function modules(mods) {
           .join('')}</div>`;
       if (m.type === 'grid')
         return `<figure class="fig"><div class="grid">${m.imgs.map((id) => img(id, { sizes: '(min-width: 1180px) 360px, (min-width: 640px) 31vw, 47vw' })).join('')}</div>${
-          m.caption ? `<figcaption>${m.caption}</figcaption>` : ''
+          m.caption ? `<figcaption>${captionHtml(m.caption)}</figcaption>` : ''
         }</figure>`;
       if (m.type === 'video')
         return `<figure class="fig fig--video"><div class="video" style="aspect-ratio:100/${m.ratio}"><iframe src="${esc(m.src)}" title="${esc(
-          m.caption ? strip(m.caption) : '영상'
-        )}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>${m.caption ? `<figcaption>${m.caption}</figcaption>` : ''}</figure>`;
+          captionText(m.caption) || '영상'
+        )}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>${m.caption ? `<figcaption>${captionHtml(m.caption)}</figcaption>` : ''}</figure>`;
       if (m.type === 'text') return `<div class="prose">\n${m.html}\n</div>`;
       return '';
     })
@@ -183,11 +205,13 @@ ${modules(data.modules)}
     }
     return { id: `text-${i + 1}`, titles, author };
   });
-  const body = `    <div class="texts">
+  // 목록의 항목을 누르면 주소 끝에 #text-N 이 붙고, 그 글만 보인다(css 의 .essay:target).
+  // 글 끝의 "목록으로"는 #texts 로 가서 글을 닫고 목록으로 돌아간다.
+  const body = `    <div class="texts" id="texts">
       <ol class="texts__index">
 ${meta.map((m) => `        <li><a href="#${m.id}"><span>${m.titles.join(' — ')}</span><span class="texts__author">${m.author}</span></a></li>`).join('\n')}
       </ol>
-${essays.map((e, i) => `      <article class="prose essay" id="${meta[i].id}">\n${e.html}\n      </article>`).join('\n')}
+${essays.map((e, i) => `      <article class="prose essay" id="${meta[i].id}">\n${e.html}\n<p class="essay__back"><a href="#texts">목록으로</a></p>\n      </article>`).join('\n')}
     </div>`;
   write('/text/', page({ title: 'Text', pathName: '/text/', body }));
 }

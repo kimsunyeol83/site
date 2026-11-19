@@ -82,6 +82,9 @@ main { padding: clamp(1.5rem, 5vw, 4rem) var(--pad) 5rem; min-height: 70vh; }
 .fig img[data-full] { cursor: zoom-in; }
 .fig--link img[data-full] { cursor: pointer; }
 .fig figcaption { margin-top: 0.6rem; font-size: 0.875rem; line-height: 1.55; color: var(--muted); text-align: center; }
+/* 캡션: 작품 제목은 굵게, 영어 설명은 다음 줄에 */
+.fig figcaption strong { font-weight: 700; color: var(--fg); }
+.cap-en { display: block; }
 .row { display: flex; gap: clamp(0.5rem, 1.5vw, 1.25rem); align-items: flex-start; }
 .row > .fig { min-width: 0; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.5rem, 1.5vw, 1.25rem); }
@@ -99,19 +102,24 @@ main { padding: clamp(1.5rem, 5vw, 4rem) var(--pad) 5rem; min-height: 70vh; }
 .prose strong { font-weight: 600; }
 .prose sup { font-size: 0.7em; line-height: 0; }
 
-.texts { max-width: var(--read); margin: 0 auto; }
+/* Text: 목록의 항목을 누르면 그 글만 보인다. 주소 끝의 #text-N 이 가리키는 글이 열린다. */
+.texts { max-width: var(--read); margin: 0 auto; scroll-margin-top: 7rem; }
 .texts__index { list-style: none; margin: 0 0 clamp(2.5rem, 7vw, 5rem); padding: 0; border-top: 1px solid var(--line); }
 .texts__index a {
   display: flex; justify-content: space-between; align-items: baseline; gap: 0.25rem 1.5rem; flex-wrap: wrap;
   padding: 0.85rem 0; border-bottom: 1px solid var(--line); text-decoration: none;
 }
 .texts__index a:hover span:first-child { text-decoration: underline; }
+.texts__index a[aria-current="true"] span:first-child { font-weight: 600; }
 .texts__author { color: var(--muted); font-size: 0.875rem; white-space: nowrap; }
-.essay { scroll-margin-top: 5rem; padding-bottom: clamp(3rem, 8vw, 6rem); margin-bottom: clamp(3rem, 8vw, 6rem); border-bottom: 1px solid var(--line); }
-.essay:last-child { border-bottom: 0; margin-bottom: 0; }
+.essay { display: none; scroll-margin-top: 7rem; }
+.essay:target { display: block; }
 .essay p.c { font-size: 1.1875rem; line-height: 1.45; margin-bottom: 0.4em; }
 .essay p.r { color: var(--muted); margin-bottom: 2.2em; }
 .essay p.r strong { font-weight: 400; }
+.essay .essay__back { margin: 3em 0 0; font-size: 0.875rem; }
+.essay__back a { color: var(--muted); text-decoration: none; }
+.essay__back a:hover { color: var(--fg); text-decoration: underline; }
 
 .cv { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem clamp(2rem, 6vw, 5rem); }
 .cv__col { max-width: none; font-size: 0.9375rem; }
