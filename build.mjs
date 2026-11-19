@@ -112,7 +112,7 @@ function modules(mods) {
       if (m.type === 'video')
         return `<figure class="fig fig--video"><div class="video" style="aspect-ratio:100/${m.ratio}"><iframe src="${esc(m.src)}" title="${esc(
           m.caption ? strip(m.caption) : '영상'
-        )}" loading="lazy" allowfullscreen></iframe></div>${m.caption ? `<figcaption>${m.caption}</figcaption>` : ''}</figure>`;
+        )}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>${m.caption ? `<figcaption>${m.caption}</figcaption>` : ''}</figure>`;
       if (m.type === 'text') return `<div class="prose">\n${m.html}\n</div>`;
       return '';
     })

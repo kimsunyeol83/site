@@ -2,9 +2,8 @@
   "modules": [
     {
       "type": "video",
-      "src": "https://www-ccv.adobe.io/v1/player/ccv/U88hyNPSPJH/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "src": "https://www.youtube-nocookie.com/embed/AyCBKm0UmUU?rel=0",
       "ratio": 56.25,
-      "maxWidth": 1920,
       "caption": "홍티아트센터 전시 영상"
     },
     {
@@ -36,9 +35,8 @@
     },
     {
       "type": "video",
-      "src": "https://www-ccv.adobe.io/v1/player/ccv/Cc-TrPPy9yo/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
+      "src": "https://www.youtube-nocookie.com/embed/FQlxTlXO-Rc?rel=0",
       "ratio": 56.25,
-      "maxWidth": 1920,
       "caption": "CTS홍보영상 (Promotional Video)"
     },
     {
@@ -91,9 +89,8 @@
     },
     {
       "type": "video",
-      "src": "https://www-ccv.adobe.io/v1/player/ccv/NRci4E_eiRK/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
-      "ratio": 56.66,
-      "maxWidth": 1906,
+      "src": "https://www.youtube-nocookie.com/embed/jOO1QgzYhIk?rel=0",
+      "ratio": 56.25,
       "caption": "Smile Manufacturing Frame (미소 교정 프레임) _ Video"
     },
     {
@@ -117,9 +114,8 @@
     },
     {
       "type": "video",
-      "src": "https://www-ccv.adobe.io/v1/player/ccv/4KB3UuguCXP/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
-      "ratio": 56.66,
-      "maxWidth": 1906,
+      "src": "https://www.youtube-nocookie.com/embed/yQo5TFLWruE?rel=0",
+      "ratio": 56.25,
       "caption": "Visual Shock Integration (시각 충격 융합) _ Video"
     },
     {
