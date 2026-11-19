@@ -2,7 +2,7 @@
   "title": "김선열 Kim Sunyoul",
   "nameKo": "김선열",
   "nameEn": "Kim Sunyoul",
-  "description": "김선열은 입체 기반의 설치 작업을 통해 기술 발전과 자본 시스템이 만든 규범 속에서 주변화되는 현상을 탐구한다.",
+  "description": "김선열은 입체설치를 기반으로 인간이 구축한 사회적·기술적 시스템과 그 기준에서 벗어나 주변화되는 존재와 흔적을 탐구한다.",
   "nav": [
     { "label": "Work", "href": "/", "match": ["/", "/work/", "/all-quiet-on-the-western-front/", "/spot-the-difference/", "/how-to-win-atsunami/", "/trouble-in-paradise/", "/studies-experiments/"] },
     { "label": "Text", "href": "/text/", "match": ["/text/"] },
