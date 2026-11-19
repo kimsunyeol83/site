@@ -55,10 +55,28 @@ ${body}
 `;
 }
 
+// 만들어진 HTML 안의 "/..." 주소를 그 페이지 기준 상대 주소("../...")로 바꾼다.
+// 이렇게 해 두면 도메인 바로 아래(kimsunyoul.com/)에서도, 하위 주소(...github.io/site/)에서도 똑같이 열린다.
+// 주의: 상대 주소는 페이지 주소가 "/"로 끝나야 맞는다(/text/). GitHub Pages는 /text 를 /text/ 로 자동으로 넘겨 준다.
+function relativize(html, pathName) {
+  const depth = pathName.split('/').filter(Boolean).length;
+  const up = depth === 0 ? './' : '../'.repeat(depth);
+  const fix = (u) => (u.startsWith('/') && !u.startsWith('//') ? up + u.slice(1) : u);
+  return html
+    .replace(/(\s(?:href|src|data-full))="([^"]*)"/g, (m, attr, url) => `${attr}="${fix(url)}"`)
+    .replace(/(\ssrcset)="([^"]*)"/g, (m, attr, list) => {
+      const items = list.split(',').map((part) => {
+        const [u, ...rest] = part.trim().split(/\s+/);
+        return [fix(u), ...rest].join(' ');
+      });
+      return `${attr}="${items.join(', ')}"`;
+    });
+}
+
 function write(pathName, html) {
   const file = path.join(root, pathName.replace(/^\//, ''), 'index.html');
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, html);
+  fs.writeFileSync(file, relativize(html, pathName));
 }
 
 // ---------- 이미지 ----------

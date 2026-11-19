@@ -6,6 +6,12 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["tools/serve.mjs"],
       "port": 4173
+    },
+    {
+      "name": "kimsunyoul-site-subpath",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/serve.mjs", "--port", "4174", "--base", "/site"],
+      "port": 4174
     }
   ]
 }
