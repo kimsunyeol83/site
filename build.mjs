@@ -173,7 +173,7 @@ ${list
     const big = `/img/cover/${w.slug}-2400.webp`;
     const focus = w.focus ? ` style="object-position:${esc(w.focus)}"` : '';
     const cover = d
-      ? `<img src="${big}" srcset="${small} 1200w, ${big} ${d.w}w" sizes="(max-width: 640px) 100vw, min(1440px, calc(100vw - 5rem))" width="${d.w}" height="${d.h}" alt=""${focus}${
+      ? `<img src="${big}" srcset="${small} 1200w, ${big} ${d.w}w" sizes="(max-width: 640px) 100vw, min(1240px, 80vw)" width="${d.w}" height="${d.h}" alt=""${focus}${
           i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'
         } decoding="async">`
       : '<span class="card__empty"></span>';
