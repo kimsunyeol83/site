@@ -59,15 +59,17 @@ main { padding: clamp(1.5rem, 5vw, 4rem) var(--pad) 5rem; min-height: 70vh; }
 
 /* ---------- Work 목록: 한 화면에 전시 하나 ---------- */
 /* 전시 제목이 위, 표지가 아래.
-   표지 틀은 사진 비율 그대로다(build.mjs 가 .card__img 에 aspect-ratio 를 적는다). 그래서 사진이 잘리지 않는다.
-   가로가 긴 화면에서는 표지 높이를 화면 높이에서 16rem을 뺀 만큼으로 정하고, 폭은 사진 비율에 따라 정해진다.
-   세로가 긴 화면(휴대폰, 세로로 둔 태블릿)에서는 화면 폭에 맞추고 높이가 사진 비율에 따라 정해진다. */
+   표지 틀은 모두 서부전선 표지와 같은 비율(2400:1496)이다. 비율이 다른 사진은 가운데를 기준으로 위아래가 잘린다.
+   어느 부분을 보일지는 works.json 의 focus(예: "50% 30%")로 바꿀 수 있다.
+   가로가 긴 화면에서는 표지 높이를 화면 높이에서 16rem을 뺀 만큼으로 정하고, 폭은 비율에 따라 정해진다.
+   세로가 긴 화면(휴대폰, 세로로 둔 태블릿)에서는 화면 폭에 맞춘다. */
+:root { --cover-ratio: 2400 / 1496; }
 .page-works main { padding-top: 1.5rem; }
 .works { margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(3rem, 8vh, 6rem); }
 /* 제목 옆 괄호 안의 연도 */
 .yr { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .card { display: block; text-decoration: none; scroll-snap-align: start; }
-.card__img { display: block; overflow: hidden; background: #ecece8; }
+.card__img { display: block; aspect-ratio: var(--cover-ratio); overflow: hidden; background: #ecece8; }
 .card__img img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
 .card:hover .card__img img { opacity: 0.9; }
 .card__title { display: block; margin-bottom: 0.9rem; font-size: clamp(1.25rem, 1rem + 0.6vw, 1.625rem); font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }

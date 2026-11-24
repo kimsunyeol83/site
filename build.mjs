@@ -177,11 +177,10 @@ ${list
           i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'
         } decoding="async">`
       : '<span class="card__empty"></span>';
-    // 표지 틀은 사진 비율 그대로다(잘리지 않게). 큰 화면에서는 높이를 정하고 폭이 비율을 따른다.
-    const ratio = d ? ` style="aspect-ratio:${d.w} / ${d.h}"` : '';
+    // 표지 틀은 모두 같은 크기다(서부전선 표지 비율, css 의 --cover-ratio). 비율이 다른 사진은 가운데를 기준으로 잘린다.
     return `      <a class="card" href="/${w.slug}/">
         <span class="card__title">${titleWithYear(w)}</span>
-        <span class="card__img"${ratio}>${cover}</span>
+        <span class="card__img">${cover}</span>
       </a>`;
   })
   .join('\n')}
