@@ -173,13 +173,15 @@ ${list
     const big = `/img/cover/${w.slug}-2400.webp`;
     const focus = w.focus ? ` style="object-position:${esc(w.focus)}"` : '';
     const cover = d
-      ? `<img src="${big}" srcset="${small} 1200w, ${big} ${d.w}w" sizes="(max-width: 640px) 100vw, min(1240px, 80vw)" width="${d.w}" height="${d.h}" alt=""${focus}${
+      ? `<img src="${big}" srcset="${small} 1200w, ${big} ${d.w}w" sizes="(max-width: 640px) 100vw, min(1600px, 92vw)" width="${d.w}" height="${d.h}" alt=""${focus}${
           i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'
         } decoding="async">`
       : '<span class="card__empty"></span>';
+    // 표지 틀은 사진 비율 그대로다(잘리지 않게). 큰 화면에서는 높이를 정하고 폭이 비율을 따른다.
+    const ratio = d ? ` style="aspect-ratio:${d.w} / ${d.h}"` : '';
     return `      <a class="card" href="/${w.slug}/">
         <span class="card__title">${titleWithYear(w)}</span>
-        <span class="card__img">${cover}</span>
+        <span class="card__img"${ratio}>${cover}</span>
       </a>`;
   })
   .join('\n')}

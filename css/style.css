@@ -59,22 +59,24 @@ main { padding: clamp(1.5rem, 5vw, 4rem) var(--pad) 5rem; min-height: 70vh; }
 
 /* ---------- Work 목록: 한 화면에 전시 하나 ---------- */
 /* 전시 제목이 위, 표지가 아래.
-   가로가 긴 화면에서는 표지 폭을 화면 폭의 80%(최대 1240px)로, 높이를 화면 높이에서 16rem을 뺀 만큼으로 둔다.
-   세로가 긴 화면(휴대폰, 세로로 둔 태블릿)에서는 표지를 4:3으로 잘라 폭에 맞춘다. */
+   표지 틀은 사진 비율 그대로다(build.mjs 가 .card__img 에 aspect-ratio 를 적는다). 그래서 사진이 잘리지 않는다.
+   가로가 긴 화면에서는 표지 높이를 화면 높이에서 16rem을 뺀 만큼으로 정하고, 폭은 사진 비율에 따라 정해진다.
+   세로가 긴 화면(휴대폰, 세로로 둔 태블릿)에서는 화면 폭에 맞추고 높이가 사진 비율에 따라 정해진다. */
 .page-works main { padding-top: 1.5rem; }
 .works { margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(3rem, 8vh, 6rem); }
 /* 제목 옆 괄호 안의 연도 */
 .yr { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .card { display: block; text-decoration: none; scroll-snap-align: start; }
-.card__img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #ecece8; }
+.card__img { display: block; overflow: hidden; background: #ecece8; }
 .card__img img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
 .card:hover .card__img img { opacity: 0.9; }
-.card__title { display: block; margin-bottom: 0.9rem; font-size: clamp(1.25rem, 1rem + 0.6vw, 1.625rem); line-height: 1.35; letter-spacing: -0.01em; }
+.card__title { display: block; margin-bottom: 0.9rem; font-size: clamp(1.25rem, 1rem + 0.6vw, 1.625rem); font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }
 .card:hover .card__title { text-decoration: underline; }
 @media (min-width: 641px) and (min-aspect-ratio: 1 / 1) {
   html:has(.page-works) { scroll-snap-type: y proximity; scroll-padding-top: 5.4rem; }
-  .works { max-width: min(1240px, 80vw); }
-  .card__img { aspect-ratio: auto; height: calc(100vh - 16rem); height: calc(100svh - 16rem); min-height: 18rem; }
+  .works { max-width: min(1600px, 92vw); justify-items: center; }
+  .card { width: fit-content; max-width: 100%; }
+  .card__img { width: auto; max-width: 100%; height: calc(100vh - 16rem); height: calc(100svh - 16rem); min-height: 18rem; }
 }
 
 /* ---------- 작업 페이지 ---------- */
