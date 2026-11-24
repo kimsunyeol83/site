@@ -163,12 +163,19 @@ function worksPage(pathName) {
     .map((w, i) => ({ w, i }))
     .sort((a, b) => parseInt(b.w.year) - parseInt(a.w.year) || a.i - b.i)
     .map((x) => x.w);
+  // 한 화면에 전시 하나. 표지는 화면 폭만큼 크게 나온다(css 의 .works).
+  // 표지의 어느 부분을 가운데 둘지는 works.json 의 focus(예: "50% 40%")로 바꿀 수 있다. 없으면 가운데.
   const body = `    <div class="works">
 ${list
   .map((w, i) => {
     const d = dims[`cover/${w.slug}`];
+    const small = `/img/cover/${w.slug}.webp`;
+    const big = `/img/cover/${w.slug}-2400.webp`;
+    const focus = w.focus ? ` style="object-position:${esc(w.focus)}"` : '';
     const cover = d
-      ? `<img src="/img/cover/${w.slug}.webp" width="${d.w}" height="${d.h}" alt=""${i < 3 ? '' : ' loading="lazy"'} decoding="async">`
+      ? `<img src="${big}" srcset="${small} 1200w, ${big} ${d.w}w" sizes="(max-width: 640px) 100vw, calc(100vw - 5rem)" width="${d.w}" height="${d.h}" alt=""${focus}${
+          i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'
+        } decoding="async">`
       : '<span class="card__empty"></span>';
     return `      <a class="card" href="/${w.slug}/">
         <span class="card__img">${cover}</span>
@@ -177,7 +184,7 @@ ${list
   })
   .join('\n')}
     </div>`;
-  write(pathName, page({ title: pathName === '/' ? '' : 'Work', pathName, body }));
+  write(pathName, page({ title: pathName === '/' ? '' : 'Work', pathName, body, bodyClass: 'page-works' }));
 }
 worksPage('/');
 worksPage('/work/');

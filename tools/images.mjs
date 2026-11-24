@@ -2,7 +2,9 @@
 // 사용: node tools/images.mjs
 // 필요: ffmpeg, ffprobe (PATH에 있어야 함)
 // 원본 위치: _원본/images/<id>.<확장자>  ->  img/work/<id 앞 8자리>-800.webp, -1600.webp
-//           _원본/covers/<slug>.<확장자> ->  img/cover/<slug>.webp (1200px)
+//           _원본/covers/<slug>.<확장자> ->  img/cover/<slug>.webp (1200px), <slug>-2400.webp (2400px, 큰 화면용)
+//           원본이 2400px보다 작으면 원본 크기 그대로 만든다(키우지 않는다).
+//           예전 표지를 보관할 때는 covers 가 아닌 다른 폴더(_원본/covers_이전/)에 둔다.
 // 이미 만들어진 파일은 건너뛴다. 다시 만들려면 img/ 안의 해당 파일을 지우고 실행한다.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -48,9 +50,11 @@ if (fs.existsSync(rawCovers)) {
   for (const f of fs.readdirSync(rawCovers)) {
     const slug = f.replace(/\.[^.]+$/, '');
     jobs.push(async () => {
-      const dst = path.join(outCover, `${slug}.webp`);
-      await convert(path.join(rawCovers, f), dst, 1200, 80);
-      dims[`cover/${slug}`] = await size(dst);
+      const src = path.join(rawCovers, f);
+      await convert(src, path.join(outCover, `${slug}.webp`), 1200, 80);
+      const big = path.join(outCover, `${slug}-2400.webp`);
+      await convert(src, big, 2400, 78);
+      dims[`cover/${slug}`] = await size(big);
     });
   }
 }
