@@ -58,21 +58,22 @@ main { padding: clamp(1.5rem, 5vw, 4rem) var(--pad) 5rem; min-height: 70vh; }
 .site-footer a:hover { color: var(--fg); }
 
 /* ---------- Work 목록: 한 화면에 전시 하나 ---------- */
-/* 가로가 긴 화면에서는 표지가 화면 높이를 채운다(머리글과 제목 줄을 뺀 높이).
+/* 전시 제목이 위, 표지가 아래.
+   가로가 긴 화면에서는 표지 폭을 화면 폭의 90%(최대 1440px)로, 높이를 화면 높이에서 머리글·제목·여백(12rem)을 뺀 만큼으로 둔다.
    세로가 긴 화면(휴대폰, 세로로 둔 태블릿)에서는 표지를 4:3으로 잘라 폭에 맞춘다. */
-.page-works main { padding-top: 0.5rem; }
-.works { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2.5rem, 6vh, 4.5rem); }
+.page-works main { padding-top: 1.5rem; }
+.works { max-width: min(1440px, 90vw); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(3rem, 8vh, 6rem); }
 /* 제목 옆 괄호 안의 연도 */
 .yr { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .card { display: block; text-decoration: none; scroll-snap-align: start; }
 .card__img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #ecece8; }
 .card__img img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
 .card:hover .card__img img { opacity: 0.9; }
-.card__title { display: block; margin-top: 0.8rem; font-size: 1.125rem; }
+.card__title { display: block; margin-bottom: 0.8rem; font-size: 1.125rem; }
 .card:hover .card__title { text-decoration: underline; }
 @media (min-width: 641px) and (min-aspect-ratio: 1 / 1) {
-  html:has(.page-works) { scroll-snap-type: y proximity; scroll-padding-top: 3.9rem; }
-  .card__img { aspect-ratio: auto; height: calc(100vh - 8.5rem); height: calc(100svh - 8.5rem); min-height: 22rem; }
+  html:has(.page-works) { scroll-snap-type: y proximity; scroll-padding-top: 5.4rem; }
+  .card__img { aspect-ratio: auto; height: calc(100vh - 12rem); height: calc(100svh - 12rem); min-height: 20rem; }
 }
 
 /* ---------- 작업 페이지 ---------- */
